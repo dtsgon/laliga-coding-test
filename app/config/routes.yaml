@@ -1,0 +1,19 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+default_CRUD:
+    path: /CRUD
+    controller: App\Controller\CRUD\ClubController::index
+
+default_API:
+    path: /API
+    controller: App\Controller\API\ClubController::index
+
+default:
+    path: /API
+    controller: App\Controller\API\ClubController::index

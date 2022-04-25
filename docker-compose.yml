@@ -1,0 +1,43 @@
+version: '3.5'
+
+services:
+
+  mariadb:
+    image: mariadb:latest
+    build:
+      context: docker/database
+      args:
+        UID: $U_ID
+    environment:
+      - MARIADB_ROOT_PASSWORD=1111
+      - MARIADB_DATABASE=laliga
+    ports:
+      - 13306:3306
+    volumes:
+      - mariadb-volume:/var/lib/myqsl
+    networks:
+      - laliga-network
+
+  php8.1-apache:
+    image: celinederoland/php8.1-apache:latest
+    build:
+      context: docker/webserver
+      args:
+        UID: $U_ID
+    environment:
+      XDEBUG_CLIENT_HOST: 172.17.0.1
+      XDEBUG_CLIENT_PORT: 9003
+      PHP_IDE_CONFIG: serverName=Docker
+    ports:
+      - 180:80
+    volumes:
+      - ./app/:/var/www/html
+    networks:
+      - laliga-network
+
+volumes:
+  mariadb-volume:
+
+networks:
+  laliga-network:
+    external: true

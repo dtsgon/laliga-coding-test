@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+			<link rel="stylesheet" href="//css/custom.css" />
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+		<div class='row'>
+			<div class='container'>
+                <h1>Prueba técnica para La Liga</h1>
+                <h3>Daniel T. Sanz González</h3>
+                <p>Para probar esta parte he creado una colección Postman llamada "<i>La Liga.postman_collection.json</i>" alojada en la raiz del proyecto.</p>
+                <p>En ella se hayan todas las acciones REST que he definido para interactuar con las entidades de proyecto.</p>
+                <p>Las entidades son:
+                    <ul>
+                        <li><i>Clubs</i></li>
+                        <li><i>Players</i></li>
+                        <li><i>Managers</i></li>
+                    </ul>
+                </p>
+                
+			</div>
+		</div>
+    </body>
+</html>

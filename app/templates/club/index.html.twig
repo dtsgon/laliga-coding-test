@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Club index{% endblock %}
+
+{% block body %}
+    <h1>Club index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Budget</th>
+                <th>City</th>
+                <th>Foundation_year</th>
+                <th>Active</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for club in clubs %}
+            <tr>
+                <td>{{ club.id }}</td>
+                <td>{{ club.name }}</td>
+                <td>{{ club.budget }}</td>
+                <td>{{ club.city }}</td>
+                <td>{{ club.foundationYear ? club.foundationYear|date('Y-m-d') : '' }}</td>
+                <td>{{ club.active }}</td>
+                <td>{{ club.createdAt ? club.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ club.updatedAt ? club.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('club_show', {'id': club.id}) }}">show</a>
+                    <a href="{{ path('club_edit', {'id': club.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('club_new') }}">Create new</a>
+{% endblock %}

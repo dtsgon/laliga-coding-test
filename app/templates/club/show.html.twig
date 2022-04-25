@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Club{% endblock %}
+
+{% block body %}
+    <h1>Club</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ club.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ club.name }}</td>
+            </tr>
+            <tr>
+                <th>Budget</th>
+                <td>{{ club.budget }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ club.city }}</td>
+            </tr>
+            <tr>
+                <th>Foundation_year</th>
+                <td>{{ club.foundationYear ? club.foundationYear|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ club.active }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ club.createdAt ? club.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ club.updatedAt ? club.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('club_index') }}">back to list</a>
+    |
+    <a href="{{ path('club_edit', {'id': club.id}) }}">edit</a>
+
+    {{ include('club/_delete_form.html.twig') }}
+{% endblock %}

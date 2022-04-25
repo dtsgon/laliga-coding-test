@@ -1,0 +1,766 @@
+{
+	"info": {
+		"_postman_id": "d471591d-f6fb-4999-9a2b-e06c110b7db1",
+		"name": "La Liga (prueba técnica Daniel T. Sanz González)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clubs",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:180/API/1.0/club/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"club",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Athletic Clubsss\",\n    \"budget\": 1369887.84,\n    \"city\": \"Bilbao\",\n    \"foundation_year\": {\n        \"date\": \"1921-04-23\"\n    },\n    \"active\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/club/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"club",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:180/API/1.0/club/:club_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"club",
+								":club_id"
+							],
+							"variable": [
+								{
+									"key": "club_id",
+									"value": "3",
+									"description": "Aúpa Athletic!"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Athletic Clubsss\",\n    \"budget\": 1369887.84,\n    \"city\": \"Bilbao\",\n    \"foundation_year\": {\n        \"date\": \"1921-04-23\"\n    },\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/club/:club_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"club",
+								":club_id"
+							],
+							"variable": [
+								{
+									"key": "club_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/club/:club_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"club",
+								":club_id"
+							],
+							"variable": [
+								{
+									"key": "club_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Athletic Clubsss\",\n    \"budget\": 1369887.84,\n    \"city\": \"Bilbao\",\n    \"foundation_year\": {\n        \"date\": \"1921-04-23\"\n    },\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/club/:club_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"club",
+								":club_id"
+							],
+							"variable": [
+								{
+									"key": "club_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Players",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"club\": 3,\n    \"name\": \"Pepe Lopez Nuñezaaaaa\",\n    \"salary\": 1.42,\n    \"dorsal\": 13,\n    \"birth_date\": {\n        \"date\": \"1891-03-27\"\n    },\n    \"active\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/:player_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								":player_id"
+							],
+							"variable": [
+								{
+									"key": "player_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"club\": 11,\n    \"name\": \"Pepe Lopez Nuñez\",\n    \"salary\": 222.42,\n    \"dorsal\": 13,\n    \"birth_date\": {\n        \"date\": \"1891-03-21\"\n    },\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/:player_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								":player_id"
+							],
+							"variable": [
+								{
+									"key": "player_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/:player_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								":player_id"
+							],
+							"variable": [
+								{
+									"key": "player_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"club\": 11,\n    \"name\": \"Pepe Lopez Nuñez\",\n    \"salary\": 222.42,\n    \"dorsal\": 13,\n    \"birth_date\": {\n        \"date\": \"1891-03-21\"\n    },\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/:player_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								":player_id"
+							],
+							"variable": [
+								{
+									"key": "player_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por Club",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filter\":\n    {\n        \"dorsal\": \"2\",\n        \"name\": \"ñ\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/club/:club_id/:page",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								"club",
+								":club_id",
+								":page"
+							],
+							"variable": [
+								{
+									"key": "club_id",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Managers",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:180/API/1.0/manager/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"manager",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"club\": 3,\n    \"name\": \"Pepe Lopez Nuñezaaaaa\",\n    \"salary\": 12.42,\n    \"license_date\": {\n        \"date\": \"2021-12-12 19:13:43.589712\"\n    },\n    \"active\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/manager/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"manager",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:180/API/1.0/manager/:manager_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"manager",
+								":manager_id"
+							],
+							"variable": [
+								{
+									"key": "manager_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"club\": 4,\n    \"name\": \"Pepe Lopez Nuñezaaaaa\",\n    \"salary\": 12.42,\n    \"license_date\": {\n        \"date\": \"2021-12-12 19:13:43.589712\"\n    },\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/manager/:manager_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"manager",
+								":manager_id"
+							],
+							"variable": [
+								{
+									"key": "manager_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:180/API/1.0/manager/:manager_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"manager",
+								":manager_id"
+							],
+							"variable": [
+								{
+									"key": "manager_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"club\": 2,\n    \"name\": \"Pepe Lopez Nuñezaaaaa\",\n    \"salary\": 12.42,\n    \"license_date\": {\n        \"date\": \"2021-12-12 19:13:43.589712\"\n    },\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:180/API/1.0/player/:player_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "180",
+							"path": [
+								"API",
+								"1.0",
+								"player",
+								":player_id"
+							],
+							"variable": [
+								{
+									"key": "player_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
